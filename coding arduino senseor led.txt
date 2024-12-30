@@ -1,0 +1,16 @@
+const int sensorPin = A0;  // Pin analog untuk sensor cahaya
+const int ledPin = 13;     // Pin digital untuk LED
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int sensorValue = analogRead(sensorPin);
+  // Sesuaikan nilai ambang batas sesuai kebutuhan
+  if (sensorValue < 500) {
+    digitalWrite(ledPin, HIGH);  // Nyalakan LED
+  } else {
+    digitalWrite(ledPin, LOW);   // Matikan LED
+  }
+}
